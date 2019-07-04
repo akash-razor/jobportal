@@ -7,7 +7,8 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Job Info</div>
                     <div class="panel-body">
-                        <form class="form-horizontal" role="form" method="PUT" action="{{ '/jobs/'.$job->id.'/edit' }}">
+                        <form class="form-horizontal" role="form" method="post" action="{{ '/jobs/'.$job->id.'/edit' }}">
+                            <input type="hidden" name="_method" value="PUT">
                             {{ csrf_field() }}
 
                             <div class="form-group{{ $errors->has('description') ? ' has-error' : '' }}">

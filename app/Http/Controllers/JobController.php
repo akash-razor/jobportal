@@ -51,6 +51,9 @@ class JobController extends Controller
     }
 
     public function update(CreateJobRequest $request, $id){
-        return $id;
+//        return 'hi';
+        $input = $request->all();
+        Job::find($id)->update($input);
+        return redirect('/user/show');
     }
 }
