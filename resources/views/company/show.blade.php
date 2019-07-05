@@ -13,7 +13,7 @@
                                 <th>title &nbsp</th>
                                 <th>company &nbsp</th>
                                 <th>salary &nbsp</th>
-                                <th>work_exp &nbsp</th>
+                                <th>Work Experience Reuired (Years) &nbsp</th>
                                 <th>Status &nbsp</th>
                                 <th>Delete</th>
                                 <th>Edit</th>

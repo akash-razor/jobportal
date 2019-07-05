@@ -114,7 +114,15 @@ class UserController extends Controller
     public function search(){
 
         $search =  request()->q;
-        $jobs = Job::where('title', 'LIKE', "%{$search}%")->orwhere('title', 'LIKE', "%{$search}%")->get();
+        $searches = explode(" ", $search);
+        $jobs = Job::query();
+        foreach($searches as $s){
+            $jobs->orWhere('title', 'LIKE', "%{$s}%");
+            $jobs->orWhere('description', 'LIKE', "%{$s}%");
+        }
+        $jobs = $jobs->distinct()->get();
+//        $jobs = Job::where('title', 'LIKE', "%{$search}%")->orwhere('description', 'LIKE', "%{$search}%")->get();
+//        return dd($jobs);
         //echo $search;
         return view('applicant/show', compact('jobs', 'search'));
         //return $jobs;

@@ -6,7 +6,7 @@
     @if(isset($search))
         <form action="/user/search" method="get">
             <input type="'text" name="q" placeholder="Search for jobs">
-            <input type="submit" value="Submit">
+            <input type="submit" value="Search">
         </form>
     @endif
     <div class="container">
@@ -23,6 +23,7 @@
                                 <th>salary &nbsp</th>
                                 <th>work_exp &nbsp</th>
                                 <th>Status &nbsp</th>
+{{--                                <th>Application Status &nbsp</th>--}}
                             </tr>
                             @foreach($jobs as $job)
                                 <tr>
@@ -36,6 +37,7 @@
                                     @else
                                         <td>Applied</td>
                                     @endif
+{{--                                    <td>{{Auth::User()->entity->jobs()->find($job->id)->pivot->status}}</td>--}}
                                 </tr>
                             @endforeach
                         </table>

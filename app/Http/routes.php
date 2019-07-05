@@ -22,7 +22,7 @@ Route::auth();
 
 Route::get('/home', 'HomeController@index');
 
-//Route::resource('/user/create', 'UserController@create');
+Route::resource('/user/create', 'UserController@create');
 //
 //Route::resource('/user/edit', 'UserController@edit');
 

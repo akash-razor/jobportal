@@ -12,6 +12,6 @@ class Job extends Model
         return $this->belongsTo('App\Company');
     }
     public function applicants(){
-        return $this->belongsToMany('App\Applicant');
+        return $this->belongsToMany('App\Applicant')->withPivot('status');
     }
 }
